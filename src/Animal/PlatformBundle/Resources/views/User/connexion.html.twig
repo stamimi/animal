@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Connexion</title>
+        <link rel="stylesheet" href="{{ asset('bundles/animalplatform/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/animalplatform/css/style.css') }}"> 
+        <link rel="stylesheet" href="{{ asset('bundles/animalplatform/css/menu.css') }}"> 
+    </head>
+    <body>
+        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 spacer">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Se connecter à Votre compte</div>
+                <div class="panel-body">
+                    <div class="container-fluid">
+                        <ul class="nav nav-tabs nav-justified">
+                            <li class="active"><a data-toggle="tab" href="#rconnexion" id="butt_rconnexion">Connexion</a></li>
+                            <li><a data-toggle="tab" href="#rinscription" id="butt_rinscription">Inscription</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="rconnexion" class="tab-pane fade in active">
+                                {{ render(controller('FOSUserBundle:Security:login')) }}
+                            </div>
+                            <div id="rinscription" class="tab-pane fade">
+                                {{ render(controller('FOSUserBundle:Registration:register')) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ asset('bundles/animalplatform/bootstrap/js/bootstrap.min.js') }}"></script>
+    </body>
+</html>

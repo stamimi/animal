@@ -1,0 +1,12 @@
+.spacer{
+	margin-top: 20px;
+}
+
+.tableAnimaux{
+    overflow-y: scroll;
+    max-height: 200px !important;
+}
+
+.tableAnimaux th{
+    text-align: center;
+}

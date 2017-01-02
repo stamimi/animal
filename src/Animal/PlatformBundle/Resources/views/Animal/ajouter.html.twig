@@ -1,0 +1,49 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Ajouter un enclos{% endblock %}
+
+{% block menu %}
+	{{parent()}}
+{% endblock %}
+
+{% block succes %}
+	{% if valider is defined %}
+		<div class="alert alert-success" role="alert">
+				<a href="#" class="alert-link">La requette été ajouté avec succès.</a>
+		</div>
+	{% endif %}
+{% endblock %}
+
+{% block body %}
+	<div class="panel panel-primary">
+		<div class="panel-heading">Ajouter mon enclos</div>
+		<div class="panel-body">
+
+			{{ form_start(form) }}
+				<div class ="col-md-12 col-sm-12 col-xs-12 form-group">
+					<label class="control-label">Nom</label>
+					{{ form_widget(form.nom) }}
+				</div>
+				<div class ="col-md-12 col-sm-12 col-xs-12 form-group">
+					<label class="control-label">Age</label>
+					{{ form_widget(form.age) }}
+				</div>
+				<div class ="col-md-12 col-sm-12 col-xs-12 form-group">
+					<label class="control-label">Famille</label>
+					{{ form_widget(form.famille) }}
+				</div>
+				<div class ="col-md-12 col-sm-12 col-xs-12 form-group">
+					<label class="control-label">Race</label>
+					{{ form_widget(form.race) }}
+				</div>
+				<div class ="col-md-12 col-sm-12 col-xs-12 form-group">
+					<label class="control-label">Nourriture</label>
+					{{ form_widget(form.nourriture) }}
+				</div>
+				<div class ="form-group text-center">
+					{{ form_widget(form.ajouter) }}
+				</div>
+			{{ form_end(form) }}
+		</div>
+	</div>
+{% endblock %}

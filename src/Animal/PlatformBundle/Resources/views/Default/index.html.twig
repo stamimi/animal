@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Accueil</title><!--
+	    <link rel="stylesheet" href="{{ asset('bundles/AnimalPlatform/css/bootstrap.min.css') }}">
+	    <link rel="stylesheet" href="{{ asset('bundles/AnimalPlatform/css/style.css') }}"> 
+	    <link rel="stylesheet" href="{{ asset('bundles/AnimalPlatform/css/menu.css') }}"> -->
+	</head>
+	<body>
+		<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 spacer">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Acceuil</div>
+				<div class="panel-body">
+					<div>
+						{{ render(controller("AnimalPlatformBundle:Default:menu")) }}
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

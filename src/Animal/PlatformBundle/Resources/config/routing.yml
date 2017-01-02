@@ -1,0 +1,31 @@
+animal_platform_homepage:
+    path:     /
+    defaults: { _controller: AnimalPlatformBundle:Animal:lister }
+
+animal_platform_animal_ajouter:
+    path:     /ajouter
+    defaults: { _controller: AnimalPlatformBundle:Animal:ajouter }
+
+animal_platform_animal_lister:
+    path:     /lister
+    defaults: { _controller: AnimalPlatformBundle:Animal:lister }
+
+animal_platform_animal_myList:
+    path:     /myList
+    defaults: { _controller: AnimalPlatformBundle:Animal:myList }
+
+animal_platform_animal_modifier:
+    path:     /modifier/{id}
+    defaults: { _controller: AnimalPlatformBundle:Animal:modifier }
+
+animal_platform_animal_supprimer:
+    path:     /supprimer/{id}
+    defaults: { _controller: AnimalPlatformBundle:Animal:supprimer }
+
+animal_platform_animal_info:
+    path:     /info/{id}
+    defaults: { _controller: AnimalPlatformBundle:Animal:info }
+
+animal_platform_animal_login:
+    path:     /connexion
+    defaults: { _controller: AnimalPlatformBundle:User:connexion }

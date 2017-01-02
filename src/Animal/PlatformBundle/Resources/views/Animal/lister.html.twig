@@ -1,0 +1,58 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Liste des enclos{% endblock %}
+
+{% block menu %}
+	{{parent()}}
+{% endblock %}
+
+{% block erreur %}
+	{% if erreur is defined %}
+		<div class="alert alert-success" role="alert">
+				<a href="#" class="alert-link">Votre liste est vide !</a>
+		</div>
+	{% endif %}
+{% endblock %}
+{% block angular %}
+	ng-app="animalApp" ng-controller="animalController" 
+{% endblock %}
+{% block body %}
+
+	{% if recherche is defined %}
+		<div class="panel panel-primary">
+			<div class="panel-heading">Liste de mes enclos</div>
+			<div class="panel-body">
+				<div class="tableAnimaux">
+					<table class="table text-center">
+						<thead>
+							<tr>
+								<th>Nom</th>
+								<th>Age</th>
+								<th>Famille</th>
+								<th>Race</th>
+								<th>Nourriture</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for key,animal in animaux %}
+								<tr>
+									<td>{{ animal.nom }}</td>
+									<td>{{ age[key] }}</td>
+									<td>{{ animal.famille }}</td>
+									<td>{{ animal.race }}</td>
+									<td>{{ animal.nourriture }}</td>
+									<td>
+										<a ng-click="informationAnimal({{ animal.id }})"><span class="glyphicon glyphicon-exclamation-sign"></span></a>
+										<a href="{{ path('animal_platform_animal_modifier',{'id':animal.id}) }}"><span class="glyphicon glyphicon-pencil"></span></a>
+										<a ng-click="supprimerAnimal({{ animal.id }})"><span class="glyphicon glyphicon-trash"></span></a>
+									</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	{% endif %}
+	<div ng-bind-html="information"></div>
+{% endblock %}

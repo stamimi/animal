@@ -1,0 +1,50 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Modifier un enclos{% endblock %}
+
+{% block menu %}
+	{{parent()}}
+{% endblock %}
+
+{% block succes %}
+	{% if modifier is defined %}
+		<div class="alert alert-success" role="alert">
+				<a href="#" class="alert-link">L'enclos a été modifier avec succès.</a>
+		</div>
+	{% endif %}
+{% endblock %}
+
+{% block body %}
+	<div class="panel panel-primary">
+		<div class="panel-heading">Modifier mon enclos</div>
+		<div class="panel-body">
+
+			{{ form_start(form) }}
+				<div class ="col-md-12 col-sm-12 col-xs-12 form-group">
+					<label class="control-label">Nom</label>
+					{{ form_widget(form.nom,{ 'value':animal.nom}) }}
+				</div>
+				<div class ="col-md-12 col-sm-12 col-xs-12 form-group">
+					<label class="control-label">Age</label>
+					{{ form_widget(form.age,{ 'value':animal.age}) }}
+				</div>
+				<div class ="col-md-12 col-sm-12 col-xs-12 form-group">
+					<label class="control-label">Famille</label>
+					{{ form_widget(form.famille,{ 'value':animal.famille}) }}
+				</div>
+				<div class ="col-md-12 col-sm-12 col-xs-12 form-group">
+					<label class="control-label">Race</label>
+					{{ form_widget(form.race,{ 'value':animal.race}) }}
+				</div>
+				<div class ="col-md-12 col-sm-12 col-xs-12 form-group">
+					<label class="control-label">Nourriture</label>
+					{{ form_widget(form.nourriture,{ 'value':animal.nourriture}) }}
+				</div>
+				<div class ="form-group text-center">
+					{{ form_widget(form.ajouter,{'label':'Modifier'}) }}
+				</div>
+			{{ form_end(form) }}
+		</div>
+	</div>
+{% endblock %}
+

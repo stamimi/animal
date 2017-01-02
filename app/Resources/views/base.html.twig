@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('bundles/animalplatform/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/animalplatform/css/style.css') }}"> 
+        <link rel="stylesheet" href="{{ asset('bundles/animalplatform/css/menu.css') }}"> 
+        {% block stylesheets %}        
+        {% endblock %}
+
+    </head>
+    <body {% block angular %}{% endblock %}>
+        <div class="navbar-collapse collapse col-md-10 col-sm-10 col-xs-12 col-md-offset-1 spacer">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a><i class="glyphicon glyphicon-user"></i> {{ app.user.username|upper }}</a>
+                </li>
+                <li><a href="{{ path('fos_user_security_logout') }}"><i class="glyphicon glyphicon-lock"></i> Me déconnecter</a></li>
+            </ul>
+        </div>
+        <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 spacer">
+            {% block succes %}{% endblock %}
+
+            {% block erreur %}{% endblock %}
+
+            {% block menu %}
+                <div id="menu">
+                    {{ render(controller("AnimalPlatformBundle:Default:menu")) }}
+                </div>
+            {% endblock %}
+           
+            {% block body %}{% endblock %}
+
+        </div>
+        {% block javascripts %}
+        {% endblock %}
+        <script type="text/javascript" src="{{ asset('bundles/animalplatform/angular/angular.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/animalplatform/js/myApp.js') }}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ asset('bundles/animalplatform/bootstrap/js/bootstrap.min.js') }}"></script>
+    </body>
+</html>
